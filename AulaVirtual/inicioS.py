@@ -47,6 +47,7 @@ def gui_login():
     login.show()
     principal.hide()
 
+
 #base de datos 
 def agregar_usuario():
     # Recuperar los valores de los campos
@@ -57,30 +58,71 @@ def agregar_usuario():
     Clave = registro.Clave.text()   #.text -->cuando usamos un line edit en pyqt6
     VerificarClave = registro.VerificarClave.text()
     
+    # Validar que todos los campos estén llenos
+    if not Nombre or not Apellido or not NombreUsuario or not Cedula or not Clave or not VerificarClave:
+        registro.Aviso.setText("Todos los campos son obligatorios")
+    # Validar que el número de cédula tenga 10 dígitos y que solo contenga números
+    elif len(Cedula) != 10 or not Cedula.isdigit():
+        registro.Aviso.setText("La cédula debe tener 10 dígitos y contener solo números")
+    # Validar que la contraseña tenga al menos 8 caracteres
+    elif len(Clave) < 8:
+        registro.Aviso.setText("La contraseña debe tener al menos 8 caracteres")
 
-    if Clave != VerificarClave:                              # muestra un aviso que las contraseñas no coinciden 
-        registro.Aviso.setText("La contraseña no coincide")  # .setText--> cuando usamos un label
+    # Validar que se haya escogido un radio button (Docente o Estudiante)
+    elif not registro.rbuttonDocente.isChecked() and not registro.rbuttonEstudiante.isChecked():
+        registro.Aviso.setText("Debe seleccionar una opción")
+
+    # Muestra un aviso que las contraseñas no coinciden
+    elif Clave != VerificarClave:            
+        registro.Aviso.setText("La contraseña no coincide")  # .setText --> Cuando usamos un label
+    
+    # Validar que el nombre y apellido solo contengan letras e iniciales en mayúscula
+    elif not Nombre.isalpha() or not Apellido.isalpha():
+        registro.Aviso.setText("El nombre y apellido solo pueden contener letras")
+    elif not Nombre[0].isupper() or not Apellido[0].isupper():
+        registro.Aviso.setText("El nombre y apellido deben iniciar con mayúscula")
+    # Validar existencia de nombre usuario y cedula y ejecuta agregar el usuario a la base de datos
     else:
+        # Validar que el usuario no exista en la base de datos de docentes
+        if registro.rbuttonDocente.isChecked():
+            conexion = sqlite3.connect("database.db")
+            cursor = conexion.cursor()
+            cursor.execute("SELECT * FROM RegistroDocente WHERE Cedula = ? OR NombreUsuario = ?", (Cedula, NombreUsuario))
+            if cursor.fetchall():
+                registro.Aviso.setText("El usuario ya existe")
+            else:
+                # Agregar el usuario a la base de datos de docentes
+                cursor.execute("INSERT INTO RegistroDocente (Nombre, Apellido, NombreUsuario, Cedula , Clave, VerificarClave) VALUES (?, ?, ?, ?, ?,?)", (Nombre, Apellido, NombreUsuario,Cedula , Clave,VerificarClave))
+                conexion.commit()
+                conexion.close()
+                borrarCampos()
+                gui_base()
+        # Validar que el usuario no exista en la base de datos de estudiantes
+        elif registro.rbuttonEstudiante.isChecked():
+            conexion = sqlite3.connect("database.db")
+            cursor = conexion.cursor()
+            cursor.execute("SELECT * FROM RegistroEstudiante WHERE Cedula = ? OR NombreUsuario = ?", (Cedula, NombreUsuario))
+            if cursor.fetchall():
+                registro.Aviso.setText("El usuario ya existe")
+            else:
+                # Agregar el usuario a la base de datos de estudiantes
+                cursor.execute("INSERT INTO RegistroEstudiante (Nombre, Apellido, NombreUsuario, Cedula , Clave, VerificarClave) VALUES (?, ?, ?, ?, ?,?)", (Nombre, Apellido, NombreUsuario, Cedula, Clave,VerificarClave))
+                conexion.commit()
+                conexion.close()
+                borrarCampos()
+                gui_base()
+        
+#Función para borrar los campos de registro una vez que se haya registrado un usuario
+def borrarCampos():
+    registro.Nombre.clear()
+    registro.Apellido.clear()
+    registro.NombreUsuario.clear()
+    registro.CorreoInstitucional.clear()
+    registro.Clave.clear()
+    registro.VerificarClave.clear()
+    registro.Aviso.clear()
 
-        # Conexión a la base de datos
-        conexion = sqlite3.connect("database.db")
-        cursor = conexion.cursor()
-        if registro.rbuttonDocente.isChecked():   #isChecked --> cuando usamos un raddiobutton en pyqt6
-             # Insertar los datos en la tabla docente
-            cursor.execute("INSERT INTO RegistroDocente (Nombre, Apellido, NombreUsuario, Cedula , Clave, VerificarClave) VALUES (?, ?, ?, ?, ?,?)", (Nombre, Apellido, NombreUsuario,Cedula , Clave,VerificarClave))
-       
-        else:
-            registro.rbuttonEstudiante.isChecked() #isChecked --> cuando usamos un raddiobutton en pyqt6
-         # Insertar los datos en la tabla estudiante
-            cursor.execute("INSERT INTO RegistroEstudiante (Nombre, Apellido, NombreUsuario, Cedula , Clave, VerificarClave) VALUES (?, ?, ?, ?, ?,?)", (Nombre, Apellido, NombreUsuario, Cedula, Clave,VerificarClave))
-       
-        # Guardar los cambios
-        conexion.commit()
-        # Mostrar la ventana base
-        gui_base()
-        # Cerrar la conexión
-        conexion.close()
-
+"""
 #Validación de usuario y contraseña con base de datos sqlite3
 def validacion_login():
     # Conexión a la base de datos
@@ -90,8 +132,12 @@ def validacion_login():
     NombreUsuario = login.usuario_IS.toPlainText()  # Accede al contenido del widget de usuario
     Clave = login.clave_IS.text()  # Accede al contenido del widget de contraseña
     
-    if login.rbuttonDocente.isChecked():
+    if not registro.rbuttonDocente.isChecked() and not registro.rbuttonEstudiante.isChecked():
+        login.avisoIS.setText("Debe seleccionar una opción")
+
+    elif login.rbuttonDocente.isChecked():
         cursor.execute("SELECT * FROM RegistroDocente WHERE NombreUsuario = ? AND Clave = ?", (NombreUsuario, Clave))
+
     else:
         login.rbuttonEstudiante.isChecked()
         cursor.execute("SELECT * FROM RegistroEstudiante WHERE Nombreusuario = ? AND Clave = ?", (NombreUsuario, Clave))
@@ -103,11 +149,60 @@ def validacion_login():
         else:
             gui_bienvenidaEstudiante()  # Mostrar ventana de bienvenida para estudiantes
     else:
-        gui_login_error()
+        #gui_login_error()
+        login.avisoIS.setText("Usuario o contraseña incorrectos")
 
     
         # Cerrar la conexión   
         conexion.close()
+"""
+
+# Validación del login
+def validacion_login():
+    # Validar que el usuario y la contraseña no estén vacíos
+    if not login.usuario_IS.toPlainText() or not login.clave_IS.text():
+        # Mostrar un aviso
+        login.avisoIS.setText("Debe ingresar un usuario y una contraseña")
+    # Validar que se haya escogido un radio button (Docente o Estudiante)
+    elif not login.rbuttonDocente.isChecked() and not login.rbuttonEstudiante.isChecked():
+        login.avisoIS.setText("Debe seleccionar una opción")
+    # Validar que el usuario y la contraseña sean correctos en funcion del tipo de usuario y cotejar con la base de datos
+    else:
+        # Conexión a la base de datos
+        conexion = sqlite3.connect("database.db")
+        cursor = conexion.cursor()
+
+        # Recuperar los valores de los campos
+        NombreUsuario = login.usuario_IS.toPlainText()  # Accede al contenido del widget de usuario
+        Clave = login.clave_IS.text()  # Accede al contenido del widget de contraseña
+
+        # Validar que el usuario y la contraseña sean correctos en funcion del tipo de usuario
+        if login.rbuttonDocente.isChecked():
+            cursor.execute("SELECT * FROM RegistroDocente WHERE NombreUsuario = ? AND Clave = ?", (NombreUsuario, Clave))
+            if cursor.fetchall():
+                gui_Menu()
+                borrarCamposLogin()
+            else:
+                login.avisoIS.setText("Usuario o contraseña incorrectos")
+        elif login.rbuttonEstudiante.isChecked():
+            cursor.execute("SELECT * FROM RegistroEstudiante WHERE NombreUsuario = ? AND Clave = ?", (NombreUsuario, Clave))
+            if cursor.fetchall():
+                gui_Menu()
+                borrarCamposLogin()
+            else:
+                login.avisoIS.setText("Usuario o contraseña incorrectos")
+        
+        # Cerrar la conexión
+        conexion.close()
+
+#Función para borrar los campos de login una vez que se haya ingresado un usuario
+def borrarCamposLogin():
+    login.usuario_IS.clear()
+    login.clave_IS.clear()
+    login.avisoIS.clear()
+
+
+
 
 #GUI indica las funciones de las ventanas
 
@@ -676,7 +771,9 @@ login.botonIngresar_IS.clicked.connect(validacion_login)
 login_error.botonRegresar.clicked.connect(r_loginIncorrecto_login) #boton regresar
 principal.botonRegistro.clicked.connect(gui_registro)
 registro.botonRegresar1.clicked.connect(gui_principal)
+registro.botonRegresar1.clicked.connect(borrarCampos)
 login.botonRegresar_IS.clicked.connect(gui_rloginprincipal)
+login.botonRegresar_IS.clicked.connect(borrarCamposLogin)
 registro.botonRegistrarse.clicked.connect(agregar_usuario)
 base.botonEntendido.clicked.connect(gui_principal)
 login_correcto.botonEntendido.clicked.connect(gui_Menu)
@@ -730,6 +827,11 @@ ventanaVisualizacionArchivo.cargarEnlaces.clicked.connect(cargarTitulos)
 ventanaVisualizacionArchivo.cargarEnlaces.clicked.connect(cargarDescripcion)
 ventanaVisualizacionArchivo.intentarEvaluacion.clicked.connect(gui_examenRecopilado)
 mtricMate.botonMatricularse.clicked.connect(validar_codigo_mate)
+
+
+#Funcion que permite borrar el contenido de los campos de texto al hacer click en registrarse o regresar
+
+
 
 #ejecutable
 principal.show()
