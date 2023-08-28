@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1281</width>
+    <height>599</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>2</y>
+      <width>1281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(96, 137, 191);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font: 700 24pt &quot;Segoe UI&quot;;
+color: rgb(242, 144, 87);</string>
+       </property>
+       <property name="text">
+        <string>AULA VIRTUAL GOTITAS DEL SABER </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="botonRegistro">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 167, 74);
+font: 700 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Registrarse</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="botonInicioSesion">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 167, 74);
+font: 700 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Iniciar Sesión</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>70</y>
+      <width>1291</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/Logo.png</normaloff>img/Logo.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>1000</width>
+      <height>1000</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="img/imagen.qrc"/>
+  <include location="img/imagen.qrc"/>
+  <include location="img/imagen.qrc"/>
+ </resources>
+ <connections/>
+</ui>
