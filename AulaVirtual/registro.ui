@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(96, 137, 191);</string>
+   <string notr="true">background-color: rgb(0, 170, 255);</string>
   </property>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
@@ -57,7 +57,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(242, 144, 87);</string>
+     <string notr="true">background-color: rgb(255, 179, 56);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -240,8 +240,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(242, 144, 87);
-font: 700 9pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">background-color: rgb(255, 179, 56);font: 700 9pt &quot;Segoe UI&quot;;</string>
     </property>
     <property name="text">
      <string>Regresar</string>
@@ -257,7 +256,7 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(242, 144, 87);
+     <string notr="true">background-color: rgb(255, 179, 56);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
     </property>
     <property name="text">

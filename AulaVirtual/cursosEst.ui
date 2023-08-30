@@ -35,8 +35,8 @@
   <widget class="QPushButton" name="botonCursoMatematica">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>170</y>
+     <x>230</x>
+     <y>160</y>
      <width>341</width>
      <height>71</height>
     </rect>
@@ -47,40 +47,6 @@ font: 700 16pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
     <string>MATEMÁTICAS</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonCursoLengua">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>290</y>
-     <width>341</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(217, 167, 74);
-font: 700 16pt &quot;Segoe UI&quot;;</string>
-   </property>
-   <property name="text">
-    <string>LENGUA Y LITERATURA</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonCursoHistoria">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>410</y>
-     <width>341</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(217, 167, 74);
-font: 700 16pt &quot;Segoe UI&quot;;</string>
-   </property>
-   <property name="text">
-    <string>HISTORIA</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -104,10 +70,10 @@ background-color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>170</y>
-     <width>161</width>
-     <height>71</height>
+     <x>330</x>
+     <y>300</y>
+     <width>271</width>
+     <height>211</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -119,58 +85,6 @@ background-color: rgb(255, 255, 255);</string>
    <property name="icon">
     <iconset>
      <normaloff>img/m2.jpg</normaloff>img/m2.jpg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>150</width>
-     <height>300</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>410</y>
-     <width>161</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>img/histo.jpg</normaloff>img/histo.jpg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>150</width>
-     <height>300</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>290</y>
-     <width>161</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>img/lite.jpg</normaloff>img/lite.jpg</iconset>
    </property>
    <property name="iconSize">
     <size>

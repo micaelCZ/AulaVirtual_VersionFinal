@@ -7,23 +7,22 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>304</height>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(96, 137, 191);
-</string>
+   <string notr="true">background-color: rgb(0, 170, 255);</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
-     <width>431</width>
-     <height>221</height>
+     <x>10</x>
+     <y>20</y>
+     <width>491</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -36,9 +35,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>150</x>
      <y>70</y>
-     <width>371</width>
+     <width>221</width>
      <height>21</height>
     </rect>
    </property>
@@ -49,15 +48,15 @@ background-color: rgb(255, 255, 255);
 </string>
    </property>
    <property name="text">
-    <string>Matricularse al curso de Matemáticas</string>
+    <string>Acceso al aula virtual</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>30</x>
      <y>110</y>
-     <width>271</width>
+     <width>461</width>
      <height>21</height>
     </rect>
    </property>
@@ -66,10 +65,10 @@ background-color: rgb(255, 255, 255);
 font: 700 12pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
-    <string>Ingrese su clave de matriculación:</string>
+    <string>Ingrese el código de acceso proporcionado por su profesor:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="codigoMate">
+  <widget class="QTextEdit" name="codigoAula">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -79,7 +78,7 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 179, 56);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonCancelarMate">
@@ -92,7 +91,7 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(217, 167, 74);
+    <string notr="true">background-color: rgb(255, 179, 56);
 font: 700 10pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
@@ -109,12 +108,12 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(217, 167, 74);
-font: 700 10pt &quot;Segoe UI&quot;;
+    <string notr="true">font: 700 10pt &quot;Segoe UI&quot;;
+background-color: rgb(255, 179, 56);
 </string>
    </property>
    <property name="text">
-    <string>Matricularse</string>
+    <string>Acceder</string>
    </property>
   </widget>
  </widget>

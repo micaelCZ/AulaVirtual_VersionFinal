@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
+    <width>682</width>
     <height>617</height>
    </rect>
   </property>
@@ -14,16 +14,16 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(96, 137, 191);</string>
+   <string notr="true">background-color: rgb(85, 170, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>611</width>
-      <height>561</height>
+      <x>20</x>
+      <y>20</y>
+      <width>641</width>
+      <height>581</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -36,9 +36,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>50</y>
-      <width>181</width>
+      <x>270</x>
+      <y>40</y>
+      <width>151</width>
       <height>61</height>
      </rect>
     </property>
@@ -55,14 +55,14 @@ color: rgb(242, 144, 87);</string>
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>550</y>
+      <y>520</y>
       <width>151</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
-background-color: rgb(217, 167, 74);</string>
+background-color: rgb(255, 224, 111);</string>
     </property>
     <property name="text">
      <string>Regresar</string>
@@ -81,7 +81,7 @@ background-color: rgb(217, 167, 74);</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>50</x>
       <y>110</y>
       <width>571</width>
       <height>61</height>
@@ -115,11 +115,14 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>210</x>
       <y>340</y>
       <width>89</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);</string>
     </property>
     <property name="text">
      <string>Verdadero</string>
@@ -133,6 +136,9 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
       <width>89</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);</string>
     </property>
     <property name="text">
      <string>Falso</string>

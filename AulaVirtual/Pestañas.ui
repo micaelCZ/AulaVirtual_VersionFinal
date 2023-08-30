@@ -32,7 +32,7 @@
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(96, 137, 191);</string>
+      <string notr="true">background-color: rgb(0, 170, 255);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -64,7 +64,7 @@
          <x>0</x>
          <y>0</y>
          <width>711</width>
-         <height>141</height>
+         <height>161</height>
         </rect>
        </property>
        <property name="text">
@@ -85,9 +85,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>140</y>
+         <y>160</y>
          <width>711</width>
-         <height>171</height>
+         <height>151</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -102,7 +102,7 @@
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>400</x>
           <y>10</y>
           <width>231</width>
           <height>31</height>
@@ -113,20 +113,20 @@
 font: 700 18pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="text">
-         <string>SUBIR DOCUMENTO</string>
+         <string>Subir documento:</string>
         </property>
        </widget>
        <widget class="QPushButton" name="botonSubirDoc">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>60</y>
+          <x>430</x>
+          <y>50</y>
           <width>171</width>
           <height>81</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(96, 137, 191);</string>
+         <string notr="true">background-color: rgb(0, 170, 255);</string>
         </property>
         <property name="text">
          <string/>
@@ -140,6 +140,35 @@ font: 700 18pt &quot;Segoe UI&quot;;</string>
           <width>100</width>
           <height>50</height>
          </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Asignatura:</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="asignaturaArchivosEnlaces">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>80</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
        </widget>
       </widget>
@@ -164,8 +193,8 @@ font: 700 18pt &quot;Segoe UI&quot;;</string>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>240</x>
-          <y>10</y>
+          <x>260</x>
+          <y>20</y>
           <width>221</width>
           <height>31</height>
          </rect>
@@ -174,14 +203,14 @@ font: 700 18pt &quot;Segoe UI&quot;;</string>
          <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="text">
-         <string>INGRESAR ENLACE</string>
+         <string>Ingresar enlace:</string>
         </property>
        </widget>
        <widget class="QTextEdit" name="ingresarEnlace">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>90</y>
+          <y>70</y>
           <width>541</width>
           <height>31</height>
          </rect>
@@ -194,15 +223,15 @@ color: rgb(0, 0, 0);</string>
        <widget class="QPushButton" name="botonRegresarPes">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>140</y>
-          <width>75</width>
-          <height>24</height>
+          <x>230</x>
+          <y>120</y>
+          <width>111</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;
-background-color: rgb(96, 137, 191);</string>
+background-color: rgb(255, 179, 56);</string>
         </property>
         <property name="text">
          <string>Regresar</string>
@@ -211,18 +240,35 @@ background-color: rgb(96, 137, 191);</string>
        <widget class="QPushButton" name="botonGuardarEnlace">
         <property name="geometry">
          <rect>
-          <x>600</x>
-          <y>90</y>
+          <x>580</x>
+          <y>70</y>
           <width>75</width>
-          <height>24</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;
-background-color: rgb(96, 137, 191);</string>
+background-color: rgb(0, 170, 255);</string>
         </property>
         <property name="text">
          <string>Añadir</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="actualizarArchivos">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>120</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;
+background-color: rgb(255, 179, 56);</string>
+        </property>
+        <property name="text">
+         <string>Actualizar</string>
         </property>
        </widget>
       </widget>

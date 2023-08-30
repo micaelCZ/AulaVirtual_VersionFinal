@@ -6,41 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>558</height>
+    <width>682</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(96, 137, 191);</string>
+   <string notr="true">background-color: rgb(85, 170, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="agregarAsignatura">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>440</y>
-      <width>151</width>
-      <height>51</height>
+      <x>360</x>
+      <y>400</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
-background-color: rgb(217, 167, 74);</string>
+background-color: rgb(255, 179, 56);</string>
     </property>
     <property name="text">
-     <string>Nuevo Curso</string>
+     <string>Agregar</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>611</width>
-      <height>471</height>
+      <x>20</x>
+      <y>20</y>
+      <width>641</width>
+      <height>511</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -53,28 +53,28 @@ background-color: rgb(217, 167, 74);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>70</y>
-      <width>391</width>
+      <x>70</x>
+      <y>40</y>
+      <width>571</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 700 36pt &quot;Segoe UI&quot;;
+     <string notr="true">font: 700 30pt &quot;Segoe UI&quot;;
 background-color: rgb(255, 255, 255);
 color: rgb(242, 144, 87);</string>
     </property>
     <property name="text">
-     <string>  MENÚ CURSOS</string>
+     <string>Administración de contenido</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonEditar">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>160</y>
-      <width>81</width>
-      <height>61</height>
+      <x>70</x>
+      <y>130</y>
+      <width>231</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -82,57 +82,55 @@ color: rgb(242, 144, 87);</string>
 </string>
     </property>
     <property name="text">
-     <string>Editar</string>
+     <string>Editar contenido</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>160</y>
-      <width>301</width>
-      <height>61</height>
+      <x>390</x>
+      <y>120</y>
+      <width>201</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 700 26pt &quot;Segoe UI&quot;;
-background-color: rgb(242, 169, 34);
-font: 24pt &quot;Segoe UI&quot;;
-font: 700 9pt &quot;Segoe UI&quot;;
-font: 700 22pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">background-color: rgb(242, 169, 34);
+font: 700 16pt &quot;Segoe UI&quot;;
+</string>
     </property>
     <property name="text">
-     <string>Matemáticas</string>
+     <string>Lista de Asignaturas</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonVer">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>160</y>
-      <width>81</width>
-      <height>61</height>
+      <x>70</x>
+      <y>210</y>
+      <width>231</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
     </property>
     <property name="text">
-     <string>Ver</string>
+     <string>Vista previa del aula</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonRegresarMenu">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>440</y>
+      <x>110</x>
+      <y>410</y>
       <width>151</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
-background-color: rgb(217, 167, 74);</string>
+background-color: rgb(255, 76, 76);</string>
     </property>
     <property name="text">
      <string>Regresar</string>
@@ -141,27 +139,97 @@ background-color: rgb(217, 167, 74);</string>
    <widget class="QPushButton" name="botonExamenRecopilado">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>160</y>
-      <width>81</width>
-      <height>61</height>
+      <x>70</x>
+      <y>290</y>
+      <width>231</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
     </property>
     <property name="text">
-     <string>Examen</string>
+     <string>Vista previa de la evaluación</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tablaAsignaturas">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>180</y>
+      <width>271</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>200</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Asignatura</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="actualizarAsignatura">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>450</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
+background-color: rgb(255, 179, 56);</string>
+    </property>
+    <property name="text">
+     <string>Actualizar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="eliminarAsignatura">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>400</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
+background-color: rgb(255, 179, 56);</string>
+    </property>
+    <property name="text">
+     <string>Eliminar</string>
     </property>
    </widget>
    <zorder>label</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>agregarAsignatura</zorder>
    <zorder>label_2</zorder>
    <zorder>botonEditar</zorder>
    <zorder>label_3</zorder>
    <zorder>botonVer</zorder>
    <zorder>botonRegresarMenu</zorder>
    <zorder>botonExamenRecopilado</zorder>
+   <zorder>tablaAsignaturas</zorder>
+   <zorder>actualizarAsignatura</zorder>
+   <zorder>eliminarAsignatura</zorder>
   </widget>
  </widget>
  <resources/>
